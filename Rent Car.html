@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent a Car</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+          <a href="#">WORLDWIDE TRAVELS</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Destination.html">Destinations</a></li>
+            <li><a href="Packages.html">Packages</a></li>
+            <li><a href="Booking.html">Booking</a></li>
+            <li><a href="Reviews.html"><i class="fa-regular fa-heart" style="color: #ffffff;"></i></li></a>
+            <li><a href="sign up.html"><i class="fa-regular fa-user" style="color: #fff8f8;"></i></li></a>
+        </ul>
+        <div class="hamburger">&#9776;</div>
+    </nav>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        });
+    </script>     
+
+    <!-- Available Cars Section -->
+    <section class="car-list">
+        <div class="container">
+            <h2>Available Cars</h2>
+            <div class="car-cards" id="car-cards">
+                <!-- Car cards will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Car Details -->
+    <div id="car-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close">&times;</span>
+            <h2 id="car-title">Car Details</h2>
+            <div id="car-info">
+                <!-- Car details will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Form Modal -->
+    <div id="order-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-order-modal" class="close">&times;</span>
+            <h2>Order Your Car</h2>
+            <form id="order-form">
+                <label for="name">Name</label>
+                <input type="text" id="name" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+                <label for="pickup-date">Pickup Date</label>
+                <input type="date" id="pickup-date" required>
+                <button type="submit" id="submit-order">Submit Order</button>
+            </form>
+        </div>
+    </div>
+
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-logo">
+            <h4>WORLDWIDE TRAVEL</h4>
+        </div>
+
+        <div class="footer-links">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="Sign Up.html">Sign Up</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="#">Reveiws</a></li>
+                <li><a href="#">Help</a></li>
+                
+            </ul>
+        </div>
+        <div class="footer-social">
+            <a href="#">Facebook</a> | <i class="fa-brands fa-facebook" style="color: #000000;"></i> |
+            <a href="#">Instagram</a> | <i class="fa-brands fa-instagram" style="color: #000000;"></i>
+            <a href="#">Twitter</a> |  <i class="fa-brands fa-twitter" style="color: #000000;"></i>
+        </div>
+    </div>
+</footer>
+
+
+<script>
+    // Smooth scroll for anchor links
+    document.querySelectorAll('.footer-links a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
+
+
+<style>
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Car List */
+.car-list {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.car-list h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    color: #000000;
+}
+
+.car-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.car-card {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.car-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.car-card h3 {
+    margin-top: 15px;
+    font-size: 1.5rem;
+}
+
+.car-card p {
+    margin: 10px 0;
+    color: #555;
+}
+
+.view-details, .order-now {
+    background-color: darkcyan;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.view-details:hover, .order-now:hover {
+    background-color: rgb(81, 133, 133);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Order Form */
+#order-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#order-form label {
+    font-size: 1rem;
+}
+
+#order-form input {
+    padding: 10px;
+    font-size: 1rem;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#order-form button {
+    padding: 10px;
+    font-size: 1rem;
+    background-color: darkcyan;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#order-form button:hover {
+    background-color: rgb(52, 133, 133);
+}
+
+</style>
+
+
+<script>
+ // Sample car data (replace with actual data)
+const cars = [
+    { id: 1, model: "Toyota Corolla", type: "Sedan", price: "$30/day", location: "Los Angeles", img: "https://www.toyota-central.com/Assets/images/Vehicle/CorollaX/Exterior4.jpg", description: "A reliable sedan perfect for city travel." },
+    { id: 2, model: "BMW X5", type: "SUV", price: "$100/day", location: "New York", img: "https://stimg.cardekho.com/images/carexteriorimages/930x620/BMW/M5-2025/11821/1719462197562/front-left-side-47.jpg", description: "A luxurious SUV with ample space and comfort." },
+    { id: 3, model: "Ford Mustang", type: "Convertible", price: "$120/day", location: "Miami", img: "https://www.autoblog.com/.image/t_share/MjA5MDg5MDE3OTI4ODIwNTgw/2024-ford-mustang-gt-front-three-quarter-low.jpg", description: "Feel the thrill with this iconic sports car." },
+    { id: 4, model: "Honda Civic", type: "Sedan", price: "$35/day", location: "San Francisco", img: "https://www.freep.com/gcdn/-mm-/c5c6b6e9b5830d1efb437ee49b36a0dc4197d386/c=0-512-4993-3333/local/-/media/2015/10/15/DetroitFreePress/DetroitFreePress/635805198427972214-16-Civic-Sedan-031.jpg", description: "A compact car for easy navigation and fuel efficiency." },
+    { id: 5, model: "Chevrolet Camaro", type: "Sports Car", price: "$110/day", location: "Las Vegas", img: "https://www.freep.com/gcdn/-mm-/def10cb9ff8f08ed7265857c64353363d29d3a8d/c=0-640-2140-1849/local/-/media/2016/03/22/DetroitFreePress/DetroitFreePress/635942757416771786-2016-Chevrolet-Camaro-SS02.JPG?width=1600&height=800&fit=crop&format=pjpg&auto=webp", description: "A high-performance car that combines style and power." },
+    { id: 6, model: "Audi A3", type: "Sedan", price: "$80/day", location: "Chicago", img: "https://www.stratstone.com/-/media/stratstone/audi/car-models/a3-sportback/audi-a3-sportback-front-720x405px.ashx", description: "An elegant sedan with advanced technology features." },
+    { id: 7, model: "Mercedes-Benz C-Class", type: "Sedan", price: "$90/day", location: "Los Angeles", img: "https://parkers-images.bauersecure.com/wp-images/22257/cut-out/930x620/mercedes-c-class.jpg", description: "A luxurious and comfortable sedan for long drives." },
+    { id: 8, model: "Tesla Model 3", type: "Electric", price: "$150/day", location: "San Francisco", img: "https://cleantechnica.com/wp-content/uploads/2023/10/1948417-00-A_0_2000-1-800x445.jpg", description: "An eco-friendly electric car with cutting-edge technology." },
+    { id: 9, model: "Hyundai Sonata", type: "Luxary Sedan", price: "$125/day", location: "San Francisco", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiNjxADL0WJffZ6vUX4xcKupuQv0DeXLa2ow&s", description: "It offers pleasant driving dynamics and boasts a generous list of standard equipment for the price.." },  
+];
+
+// Function to render car cards
+function renderCars() {
+    const carCardsContainer = document.getElementById('car-cards');
+    carCardsContainer.innerHTML = ''; // Clear previous cards
+
+    cars.forEach(car => {
+        const card = document.createElement('div');
+        card.classList.add('car-card');
+        card.innerHTML = `
+            <img src="${car.img}" alt="${car.model}">
+            <h3>${car.model}</h3>
+            <p><strong>Type:</strong> ${car.type}</p>
+            <p><strong>Price:</strong> ${car.price}</p>
+            <p><strong>Location:</strong> ${car.location}</p>
+            <button class="view-details" onclick="openModal(${car.id})">View Details</button>
+            <button class="order-now" onclick="openOrderModal(${car.id})">Rent Now</button>
+        `;
+        carCardsContainer.appendChild(card);
+    });
+}
+
+// Function to open the car details modal
+function openModal(carId) {
+    const car = cars.find(car => car.id === carId);
+    if (car) {
+        const carTitle = document.getElementById('car-title');
+        const carInfo = document.getElementById('car-info');
+        carTitle.textContent = car.model;
+        carInfo.innerHTML = `
+            <p><strong>Location:</strong> ${car.location}</p>
+            <p><strong>Type:</strong> ${car.type}</p>
+            <p><strong>Price:</strong> ${car.price}</p>
+            <p>${car.description}</p>
+        `;
+        document.getElementById('car-modal').style.display = 'block';
+    }
+}
+
+// Function to open the car order modal
+function openOrderModal(carId) {
+    const car = cars.find(car => car.id === carId);
+    if (car) {
+        const orderForm = document.getElementById('order-form');
+        orderForm.carId = car.id; // Store the car ID in the form for future reference
+        document.getElementById('order-modal').style.display = 'block';
+    }
+}
+
+// Close modals when the user clicks the close button
+document.getElementById('close-modal').onclick = function() {
+    document.getElementById('car-modal').style.display = 'none';
+};
+
+document.getElementById('close-order-modal').onclick = function() {
+    document.getElementById('order-modal').style.display = 'none';
+};
+
+// Handle form submission
+document.getElementById('order-form').onsubmit = function(event) {
+    event.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const pickupDate = document.getElementById('pickup-date').value;
+
+    // You can handle the order submission here (e.g., send data to a server)
+    alert(`Thank you, ${name}! Your order for the car has been placed.`);
+    document.getElementById('order-modal').style.display = 'none';
+};
+
+// Initial render of cars
+renderCars();   
+</script>
+
+
+
+</body>
+</html>

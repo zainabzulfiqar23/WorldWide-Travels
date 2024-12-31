@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Hotel</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">
+      <a href="#">WORLDWIDE TRAVELS</a>
+    </div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Destination.html">Destinations</a></li>
+        <li><a href="Packages.html">Packages</a></li>
+        <li><a href="Booking.html">Booking</a></li>
+        <li><a href="Reviews.html"><i class="fa-regular fa-heart" style="color: #ffffff;"></i></li></a>
+        <li><a href="sign up.html"><i class="fa-regular fa-user" style="color: #fff8f8;"></i></li></a>
+    </ul>
+    <div class="hamburger">&#9776;</div>
+</nav> 
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.querySelector('.hamburger');
+      const navLinks = document.querySelector('.nav-links');
+      
+      hamburger.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+      });
+  });
+</script>   
+
+
+  <main>
+    <section class="hero">
+      <div class="form-container">
+        <h1>Find Your Perfect Hotel</h1>
+        <form id="hotel-booking-form">
+          <div class="form-group">
+            <label for="destination">Destination</label>
+            <input type="text" id="destination" name="destination" placeholder="Where would you like to go?" required>
+          </div>
+
+          <div class="form-group">
+            <label for="checkin">Check-in</label>
+            <input type="date" id="checkin" name="checkin" required>
+          </div>
+
+          <div class="form-group">
+            <label for="checkout">Check-out</label>
+            <input type="date" id="checkout" name="checkout" required>
+          </div>
+
+          <div class="form-group">
+            <label for="guests">Guests</label>
+            <input type="number" id="guests" name="guests" min="1" max="10" required>
+          </div>
+
+          <button type="submit" id="search-btn">Search Hotels</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="hotel-results" class="results-section" style="display: none;">
+      <div class="container">
+        <h2>Found Hotels in <span id="destination-name"></span></h2>
+        <div id="hotels-list" class="hotel-list"></div>
+      </div>
+    </section>
+  </main>
+
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-content">
+      <div class="footer-logo">
+          <h4>WORLDWIDE TRAVEL</h4>
+      </div>
+
+      <div class="footer-links">
+          <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="Sign Up.html">Sign Up</a></li>
+              <li><a href="Contact.html">Contact</a></li>
+              <li><a href="#">Reveiws</a></li>
+              <li><a href="#">Help</a></li>
+              
+          </ul>
+      </div>
+      <div class="footer-social">
+          <a href="#">Facebook</a> | <i class="fa-brands fa-facebook" style="color: #000000;"></i> |
+          <a href="#">Instagram</a> | <i class="fa-brands fa-instagram" style="color: #000000;"></i>
+          <a href="#">Twitter</a> |  <i class="fa-brands fa-twitter" style="color: #000000;"></i>
+      </div>
+  </div>
+</footer>
+
+<script>
+  // Smooth scroll for anchor links
+  document.querySelectorAll('.footer-links a').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+          
+          if (targetElement) {
+              window.scrollTo({
+                  top: targetElement.offsetTop,
+                  behavior: 'smooth'
+              });
+          }
+      });
+  });
+</script> 
+
+  
+<style>
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+main {
+  padding: 40px 20px;
+}
+
+.hero {
+  background-color: whitesmoke;
+  background-image: none;
+  color: #fff;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.form-container {
+  background-color: rgba(255, 251, 251, 0.6);
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 8px;
+
+}
+
+.form-container h1 {
+                    color: darkcyan;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #000000;
+}
+
+input {
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #1f1d1d;
+}
+
+button {
+  padding: 15px;
+  font-size: 18px;
+  color: #fff;
+  background-color: darkcyan;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #4f9094;
+}
+
+.results-section {
+  background-color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.results-section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: darkcyan;
+
+}
+
+.hotel-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.hotel-item {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.hotel-item:hover {
+  transform: translateY(-5px);
+}
+
+.hotel-item h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #2d2d2d;
+}
+
+.hotel-item p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.book-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: darkcyan;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.book-btn:hover {
+  background-color: #4f9094;
+}
+
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .form-container {
+    padding: 20px;
+  }
+
+  .results-section h2 {
+    font-size: 24px;
+  }
+
+  .hotel-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero h1 {
+    font-size: 24px;
+  }
+
+  button {
+    padding: 12px;
+    font-size: 16px;
+  }
+}
+</style>
+
+
+<script>
+// Mock data for hotels based on destination
+const hotelsData = {
+  "Paris": [
+    { name: "Hotel Eiffel", description: "A luxury hotel with a view of the Eiffel Tower.", link: "#" },
+    { name: "Le Grand Paris", description: "A grand Parisian hotel with elegant rooms.", link: "#" },
+    { name: "Chic Boutique", description: "A trendy boutique hotel in the heart of Paris.", link: "#" }
+  ],
+  "New York": [
+    { name: "Empire State Hotel", description: "Experience the buzz of New York with this central hotel.", link: "#" },
+    { name: "Times Square Inn", description: "Located right at the heart of Times Square.", link: "#" },
+    { name: "Luxury Downtown", description: "An upscale hotel in Manhattan with world-class amenities.", link: "#" }
+  ],
+  "Tokyo": [
+    { name: "Tokyo Tower Hotel", description: "Enjoy breathtaking views of Tokyo Tower.", link: "#" },
+    { name: "Shibuya Heights", description: "Stay close to the bustling Shibuya Crossing.", link: "#" },
+    { name: "Kyoto Garden Resort", description: "A serene resort in the heart of Tokyo.", link: "#" }
+  ]
+};
+
+// Handle form submission
+document.getElementById('hotel-booking-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  // Get form values
+  const destination = document.getElementById('destination').value.trim();
+  const checkin = document.getElementById('checkin').value;
+  const checkout = document.getElementById('checkout').value;
+  const guests = document.getElementById('guests').value;
+
+  if (destination && checkin && checkout && guests) {
+    // Check if destination has hotels
+    const hotels = hotelsData[destination];
+
+    if (hotels) {
+      // Show hotel results
+      document.getElementById('destination-name').innerText = destination;
+      const hotelList = document.getElementById('hotels-list');
+      hotelList.innerHTML = '';
+
+      hotels.forEach(hotel => {
+        const hotelItem = document.createElement('div');
+        hotelItem.classList.add('hotel-item');
+        hotelItem.innerHTML = `
+          <h3>${hotel.name}</h3>
+          <p>${hotel.description}</p>
+          <a href="${hotel.link}" class="book-btn">Book Now</a>
+        `;
+        hotelList.appendChild(hotelItem);
+      });
+
+      // Show the results section
+      document.getElementById('hotel-results').style.display = 'block';
+    } else {
+      alert(`Sorry, we couldn't find hotels in ${destination}.`);
+    }
+  } else {
+    alert('Please fill out all fields.');
+  }
+});
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Flights</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    
+    <nav class="navbar">
+        <div class="logo">
+          <a href="#">WORLDWIDE TRAVELS</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Destination.html">Destinations</a></li>
+            <li><a href="Packages.html">Packages</a></li>
+            <li><a href="Booking.html">Booking</a></li>
+            <li><a href="Reviews.html"><i class="fa-regular fa-heart" style="color: #ffffff;"></i></li></a>
+            <li><a href="sign up.html"><i class="fa-regular fa-user" style="color: #fff8f8;"></i></li></a>
+        </ul>
+        <div class="hamburger">&#9776;</div>
+    </nav>
+
+  <h1>Book Your Flight</h1>
+            <p>Find the best flight deals for your next adventure!</p>
+    <section class="search-form">
+        <div class="container">
+            <form id="flightForm">
+                <div class="form-group">
+                    <label for="from">From</label>
+                    <input type="text" id="from" name="from" placeholder="Departure city" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="to">To</label>
+                    <input type="text" id="to" name="to" placeholder="Destination city" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="departure-date">Departure Date</label>
+                    <input type="date" id="departure-date" name="departure-date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="return-date">Return Date (Optional)</label>
+                    <input type="date" id="return-date" name="return-date">
+                </div>
+
+                <div class="form-group">
+                    <label for="passengers">Number of Passengers</label>
+                    <input type="number" id="passengers" name="passengers" min="1" max="10" value="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="trip-type">Trip Type</label>
+                    <select id="trip-type" name="trip-type" required>
+                        <option value="round-trip">Round Trip</option>
+                        <option value="one-way">One Way</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn">Search Flights</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="results" id="resultsSection">
+        <div class="container">
+            <h2>Available Flights</h2>
+            <p id="resultsMessage">Please fill out the form to search for flights.</p>
+            <div id="flightResults"></div>
+        </div>
+    </section>
+
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-logo">
+            <h4>WORLDWIDE TRAVEL</h4>
+        </div>
+
+        <div class="footer-links">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="Sign Up.html">Sign Up</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="#">Reveiws</a></li>
+                <li><a href="#">Help</a></li>
+                
+            </ul>
+        </div>
+        <div class="footer-social">
+            <a href="#">Facebook</a> | <i class="fa-brands fa-facebook" style="color: #000000;"></i> |
+            <a href="#">Instagram</a> | <i class="fa-brands fa-instagram" style="color: #000000;"></i>
+            <a href="#">Twitter</a> |  <i class="fa-brands fa-twitter" style="color: #000000;"></i>
+        </div>
+    </div>
+</footer>
+
+
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #009688;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.search-form {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-form form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.search-form .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.search-form input, .search-form select {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-form .btn {
+    grid-column: span 2;
+    background-color: #009688;
+    color: #fff;
+    padding: 15px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-form .btn:hover {
+    background-color: #00796b;
+}
+
+.results {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.results h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.results .flight-item {
+    background-color: #f0f0f0;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.results .flight-item p {
+    margin: 5px 0;
+}
+
+.results .flight-item .book-now {
+    display: inline-block;
+    background-color: #009688;
+    color: #fff;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.results .flight-item .book-now:hover {
+    background-color: #00796b;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .search-form form {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+
+<script>
+// Example flight data (mocked API response)
+const flightData = [
+    { from: 'New York', to: 'London', departure: '2024-12-25', return: '2024-12-30', passengers: 1, price: 500, airline: 'Airline A', duration: '7h 45m' },
+    { from: 'Los Angeles', to: 'Paris', departure: '2024-12-20', return: '2024-12-25', passengers: 2, price: 750, airline: 'Airline B', duration: '10h 30m' },
+    { from: 'Chicago', to: 'Tokyo', departure: '2024-12-15', return: '2024-12-22', passengers: 1, price: 800, airline: 'Airline C', duration: '13h 20m' },
+    { from: 'New York', to: 'Tokyo', departure: '2024-12-30', return: '2025-01-06', passengers: 1, price: 950, airline: 'Airline D', duration: '14h 5m' },
+];
+
+document.getElementById('flightForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const from = document.getElementById('from').value;
+    const to = document.getElementById('to').value;
+    const departureDate = document.getElementById('departure-date').value;
+    const returnDate = document.getElementById('return-date').value || 'N/A';
+    const passengers = document.getElementById('passengers').value;
+    const tripType = document.getElementById('trip-type').value;
+
+    // Filter flights based on search
+    const results = flightData.filter(flight => 
+        flight.from.toLowerCase() === from.toLowerCase() &&
+        flight.to.toLowerCase() === to.toLowerCase() &&
+        flight.departure === departureDate &&
+        (tripType === 'round-trip' || (tripType === 'one-way' && flight.return === 'N/A'))
+    );
+
+    const resultsSection = document.getElementById('resultsSection');
+    const resultsMessage = document.getElementById('resultsMessage');
+    const flightResults = document.getElementById('flightResults');
+
+    if (results.length > 0) {
+        resultsSection.style.display = 'block';
+        resultsMessage.textContent = `${results.length} flight(s) found.`;
+        flightResults.innerHTML = results.map(flight => `
+            <div class="flight-item">
+                <p><strong>From:</strong> ${flight.from}</p>
+                <p><strong>To:</strong> ${flight.to}</p>
+                <p><strong>Departure:</strong> ${flight.departure}</p>
+                <p><strong>Return:</strong> ${flight.return}</p>
+                <p><strong>Airline:</strong> ${flight.airline}</p>
+                <p><strong>Duration:</strong> ${flight.duration}</p>
+                <p><strong>Passengers:</strong> ${flight.passengers}</p>
+                <p><strong>Price:</strong> $${flight.price}</p>
+                <a href="#" class="book-now">Book Now</a>
+            </div>
+        `).join('');
+    } else {
+        resultsSection.style.display = 'none';
+        alert('No flights found for your search.');
+    }
+});
+</script> 
+
+
+</body>
+</html>

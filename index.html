@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+ <!-- Hero Section with Background Image -->
+ <section class="hero">
+    <nav class="navbar">
+        <div class="logo">
+          <a href="#">WORLDWIDE TRAVELS</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Destination.html">Destinations</a></li>
+            <li><a href="Packages.html">Packages</a></li>
+            <li><a href="Booking.html">Booking</a></li>
+            <li><a href="Reviews.html"><i class="fa-regular fa-heart" style="color: #ffffff;"></i></li></a>
+            <li><a href="sign up.html"><i class="fa-regular fa-user" style="color: #fff8f8;"></i></li></a>
+        </ul>
+        <div class="hamburger">&#9776;</div>
+    </nav>
+
+    <div class="hero-text">
+        <h1>Explore & Enjoy The World</h1>
+        <p>Visit Your Dream Places</p>
+    </div>
+
+ <!-- Transparent Button -->
+ <button class="transparent-btn" onclick="navigateLearnMore()">Learn More</button>
+</section>
+
+<script>
+    // script.js
+      
+    // Function to navigate to the learn more (or any other desired location)
+    function navigateLearnMore() {
+    // Here you can change the URL to where your shop page is located
+    window.location.href = "destination.html"; // Example: Navigate to 'learn more.html'
+    }
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    });
+</script>   
+
+
+<h2>WHY CHOOSE US ?</h2>
+<div class="feature-container">
+    <div class="feature-box">
+        <div class="feature-icon">
+            <img src="https://via.placeholder.com/50x50/3498db/ffffff?text=Flight" alt="Flight Icon">
+        </div>
+        <h3>Book Flights</h3>
+        <p>Find the best deals on flights to your favorite destinations.</p>
+        <a href="Explore Flight.html">Explore Flights</a>
+    </div>
+    
+    
+    <div class="feature-box">
+    <div class="feature-icon">
+    <img src="https://via.placeholder.com/50x50/2ecc71/ffffff?text=Hotel" alt="Hotel Icon">
+        </div>
+        <h3>Hotel Reservations</h3>
+        <p>Choose from a wide range of hotels and resorts.</p>
+        <a href="Book Hotel.html">Book a Hotel</a>
+    </div>
+
+    <div class="feature-box">
+        <div class="feature-icon">
+            <img src="https://via.placeholder.com/50x50/e74c3c/ffffff?text=Tour" alt="Tour Icon">
+        </div>
+        <h3>Guided Tours</h3>
+        <p>Experience the best local tours and activities with expert guides.</p>
+        <a href="Guided Tour.html">Explore Tours</a>
+    </div>
+
+    <div class="feature-box">
+        <div class="feature-icon">
+            <img src="https://via.placeholder.com/50x50/f39c12/ffffff?text=Car" alt="Car Icon">
+        </div>
+        <h3>Car Rentals</h3>
+        <p>Rent a car and explore the city at your own pace.</p>
+        <a href="Rent Car.html">Rent a Car</a>
+    </div>
+</div>
+
+<script>
+    // Optional JS to add interactivity like animations or dynamic content
+    // This can be used for hover effects, animations, or other dynamic behaviors
+    
+    document.querySelectorAll('.feature-box').forEach((box) => {
+        box.addEventListener('mouseenter', () => {
+            box.style.transform = 'scale(1.05)';
+        });
+        
+        box.addEventListener('mouseleave', () => {
+            box.style.transform = 'scale(1)';
+        });
+    });
+</script>
+
+
+<div class="responsive-div">
+    <div class="image-container">
+        <img src="https://reveriechaser.com/wp-content/uploads/2017/12/DSC01636.jpg" alt="Travel Destination">
+    </div>
+    <div class="text-container">
+        <h2>Discover Beautiful Destinations</h2>
+        <p>Explore the world's most beautiful destinations, from exotic beaches to lush green mountains. Plan your next trip now!</p>
+    </div>
+</div>
+
+<div class="responsive-div">
+    <div class="text-container">
+        <h2>Whole Family Together</h2>
+        <p>We also plan family trip in lowest price with all best facilities. See our packages for more information</p>
+    </div>
+    <div class="image-container">
+        <img src="https://images.seattletimes.com/wp-content/uploads/2024/07/urnpublicidap.orgae08640b615a2a131541a96fbd71d919Large-Family-Jumps-In-Air-While-Photographer-Takes-Photo.jpg?d=1020x701" alt="Family Trip">
+    </div>
+</div>
+
+<script>
+    // JavaScript for hover effect on the image
+    const image = document.querySelector('.responsive-div .image-container img');
+    
+    image.addEventListener('mouseenter', () => {
+        image.style.transform = 'scale(1.05)';
+        image.style.transition = 'transform 0.3s ease-in-out';
+    });
+    
+    image.addEventListener('mouseleave', () => {
+        image.style.transform = 'scale(1)';
+    });
+</script>
+    
+<h4>REVEIWS FROM OUR CLIENTS</h4>
+    <div class="comment-container">
+    <div class="comment-box">
+        <img src="https://t4.ftcdn.net/jpg/00/65/77/27/360_F_65772719_A1UV5kLi5nCEWI0BNLLiFaBPEkUbv5Fv.jpg" alt="People Icon" height="100px" width="100px">
+        <div class="star">
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+          </div>
+            <p>It was such a best travel experience we had so far. I can't thank you enough for them</p>
+        </div>
+        <div class="comment-box">
+            <img src="https://i.pinimg.com/564x/9a/f2/5c/9af25c38ec76032b8b450285fd29130c.jpg" alt="People Icon" height="100px" width="100px">
+            <div class="star">
+                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+              </div>
+                <p>If you think to plan a trip with this agent, go for it. You have nothing to worry about. </p>
+            </div>
+            <div class="comment-box">
+                <img src="https://t4.ftcdn.net/jpg/01/27/15/89/360_F_127158933_cDZA4suMXsx2n0LQ03FzpX50R7fBaUx2.jpg" alt="Peoples Icon" height="100px" width="100px">
+                <div class="star">
+                    <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                    <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                    <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                    <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                  </div>
+                    <p>The tour operator is a perfect choice for the family trip. They are expert in the business.</p>
+                </div>
+                <div class="comment-box">
+                    <img src="https://media.istockphoto.com/id/1533834784/vector/symbol-people-icon-vector-graphics.jpg?s=612x612&w=0&k=20&c=Tq8HHi5fDpsCtkjyDFNAQ0K2sPjhA_ZulcltxgJG-ZM=" alt="Peoples Icon" height="100px" width="100px">
+                    <div class="star">
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                      </div>
+                        <p>It was the best tour experience of my life. From now on, I will buy a tour and travel package from this agent only. Highly recommend them. </p>
+                    </div>
+                   </div>
+                           
+
+ <!-- Footer Section -->
+ <footer class="footer">
+    <div class="footer-content">
+        <div class="footer-logo">
+            <h4>WORLDWIDE TRAVELS</h4>
+        </div>
+
+        <div class="footer-links">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="Sign Up.html">Sign Up</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="#">Reveiws</a></li>
+                <li><a href="#">Help</a></li>
+                
+            </ul>
+        </div>
+        <div class="footer-social">
+            <a href="#">Facebook</a> | <i class="fa-brands fa-facebook" style="color: #000000;"></i> |
+            <a href="#">Instagram</a> | <i class="fa-brands fa-instagram" style="color: #000000;"></i>
+            <a href="#">Twitter</a> |  <i class="fa-brands fa-twitter" style="color: #000000;"></i>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Smooth scroll for anchor links
+    document.querySelectorAll('.footer-links a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
+    
+
+
+
+
+
+</body>
+</html>

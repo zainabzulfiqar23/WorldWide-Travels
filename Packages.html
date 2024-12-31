@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Packages</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <nav class="navbar">
+        <div class="logo">
+          <a href="#">WORLDWIDE TRAVELS</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Destination.html">Destinations</a></li>
+            <li><a href="Packages.html">Packages</a></li>
+            <li><a href="Booking.html">Booking</a></li>
+            <li><a href="Reviews.html"><i class="fa-regular fa-heart" style="color: #ffffff;"></i></li></a>
+            <li><a href="sign up.html"><i class="fa-regular fa-user" style="color: #fff8f8;"></i></li></a>
+        </ul>
+        <div class="hamburger">&#9776;</div>
+    </nav>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        });
+    </script>   
+
+<h5>Our Packages</h5>
+    <!-- Packages Section -->
+    <section class="packages">
+        <div class="container">
+            <!-- Package 1 -->
+            <div class="package-card">
+                <img src="https://t3.ftcdn.net/jpg/08/36/53/52/360_F_836535225_xB4dkC6uTpvwUKlEo6iiVQHj9vQOk7wq.jpg" alt="Beach Paradise">
+                <div class="package-info">
+                    <h3>Beach Paradise</h3>
+                    <p class="price">$799</p>
+                    <p class="description">Relax for 3 days at a tropical beach resort with all best facilities.</p>
+                    <button onclick="toggleDetails('details1')">View Details</button>
+                    <div id="details1" class="package-details">
+                        <p>Enjoy white sandy beaches, clear blue waters, with inclusiv-meals.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package 2 -->
+            <div class="package-card">
+                <img src="https://drifttravel.com/wp-content/uploads/2021/08/Picture1.jpg" alt="Mountain Adventure">
+                <div class="package-info">
+                    <h3>Mountain Adventure</h3>
+                    <p class="price">$999</p>
+                    <p class="description">5-day trek in the mountains with breathtaking views.</p>
+                    <button onclick="toggleDetails('details2')">View Details</button>
+                    <div id="details2" class="package-details">
+                        <p>Guided treks, cozy mountain lodges, and panoramic views of nature.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package 3 -->
+            <div class="package-card">
+                <img src="https://images.squarespace-cdn.com/content/v1/55ee34aae4b0bf70212ada4c/1542222688302-DL85Y09C7U00G5MMM3PS/LV5A6943.jpg?format=500w" alt="Cultural Expedition">
+                <div class="package-info">
+                    <h3>Cultural Expedition</h3>
+                    <p class="price">$1299</p>
+                    <p class="description">Discover ancient cultures and history over 10 days.</p>
+                    <button onclick="toggleDetails('details3')">View Details</button>
+                    <div id="details3" class="package-details">
+                        <p>Explore historic landmarks and museums while learning about ancient cultures.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package 4 -->
+            <div class="package-card">
+                <img src="https://media.istockphoto.com/id/939160216/photo/tourists-on-safari-game-drive.jpg?s=612x612&w=0&k=20&c=JWjq4KqFlLSmfCcAo8LwgQUt1z8ofuMcHF_pDkqmooc=" alt="Safari Adventure">
+                <div class="package-info">
+                    <h3>Safari Adventure</h3>
+                    <p class="price">$1499</p>
+                    <p class="description">Experience the thrill of a wildlife safari for 8 days.</p>
+                    <button onclick="toggleDetails('details4')">View Details</button>
+                    <div id="details4" class="package-details">
+                        <p>Enjoy game drives, bush camps, and spotting wildlife in its natural habitat.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package 5 -->
+            <div class="package-card">
+                <img src="https://www.pureholidayscruises.co.uk/uploads/images/Cruise%20Line/Norwegian%20Cruise%20Line/Getaway/ncl_Gtwy_Ocho_Rios_12_hi.jpg" alt="Cruise Getaway">
+                <div class="package-info">
+                    <h3>Cruise Getaway</h3>
+                    <p class="price">$1799</p>
+                    <p class="description">7 days on a luxurious cruise with exotic destinations.</p>
+                    <button onclick="toggleDetails('details5')">View Details</button>
+                    <div id="details5" class="package-details">
+                        <p>Relax on board while visiting beautiful ports and enjoying onboard activities.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package 6 -->
+            <div class="package-card">
+                <img src="https://cdn.cityexplorerliverpool.co.uk/wp-content/uploads/2023/07/city-explorer-liverool-original-open-top-bus-tour.jpg" alt="City Explorer">
+                <div class="package-info">
+                    <h3>City Explorer</h3>
+                    <p class="price">$599</p>
+                    <p class="description">5 days of urban exploration and sightseeing in major cities.</p>
+                    <button onclick="toggleDetails('details6')">View Details</button>
+                    <div id="details6" class="package-details">
+                        <p>Guided city tours, iconic landmarks, and hidden gems.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package 7 -->
+            <div class="package-card">
+                <img src="https://thumbs.dreamstime.com/b/palm-tropical-beach-punta-cana-dominican-republic-tropical-beach-punta-cana-dominican-republic-137389590.jpg" alt="Tropical Island">
+                <div class="package-info">
+                    <h3>Tropical Island</h3>
+                    <p class="price">$999</p>
+                    <p class="description">7 days in a tropical island paradise with vibrant culture.</p>
+                    <button onclick="toggleDetails('details7')">View Details</button>
+                    <div id="details7" class="package-details">
+                        <p>Relax on pristine beaches, explore lush forests, and discover island culture.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package 8 -->
+            <div class="package-card">
+                <img src="https://ak.picdn.net/offset/photos/54ca69da5a10fc50d2d02a27/medium/offset_184677.jpg" alt="Adventure Trek">
+                <div class="package-info">
+                    <h3>Adventure Trek</h3>
+                    <p class="price">$1299</p>
+                    <p class="description">Embark on a thrilling 10-day trekking journey.</p>
+                    <button onclick="toggleDetails('details8')">View Details</button>
+                    <div id="details8" class="package-details">
+                        <p>Discover new trails, challenging landscapes, and breathtaking views.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package 9 -->
+            <div class="package-card">
+                <img src="https://st5.depositphotos.com/2853475/70742/i/450/depositphotos_707423812-stock-photo-group-multiethnic-teenagers-spending-time.jpg" alt="Desert Escape">
+                <div class="package-info">
+                    <h3>Group Trip</h3>
+                    <p class="price">$1100</p>
+                    <p class="description">Go to enjoy with all friends or family members .</p>
+                    <button onclick="toggleDetails('details9')">View Details</button>
+                    <div id="details9" class="package-details">
+                        <p>Now go together with friends or family with all best facilities in very reasonable price. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>Want to book ? Visit our <a href="Booking.html">Booking</a>for more information.</p>
+</section>
+
+
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-logo">
+            <h4>WORLDWIDE TRAVEL</h4>
+        </div>
+
+        <div class="footer-links">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="Sign Up.html">Sign Up</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="#">Reveiws</a></li>
+                <li><a href="#">Help</a></li>
+                
+            </ul>
+        </div>
+        <div class="footer-social">
+            <a href="#">Facebook</a> | <i class="fa-brands fa-facebook" style="color: #000000;"></i> |
+            <a href="#">Instagram</a> | <i class="fa-brands fa-instagram" style="color: #000000;"></i>
+            <a href="#">Twitter</a> |  <i class="fa-brands fa-twitter" style="color: #000000;"></i>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Smooth scroll for anchor links
+    document.querySelectorAll('.footer-links a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
+    
+
+<script>
+// JavaScript to toggle the visibility of the package details
+function toggleDetails(packageId) {
+    const details = document.getElementById(packageId);
+    if (details.style.display === "block") {
+        details.style.display = "none";
+    } else {
+        details.style.display = "block";
+    }
+}
+</script>
+
+
+
+
+
+
+</body>
+</html>

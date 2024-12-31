@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Guided Tours</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+          <a href="#">WORLDWIDE TRAVELS</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Destination.html">Destinations</a></li>
+            <li><a href="Packages.html">Packages</a></li>
+            <li><a href="Booking.html">Booking</a></li>
+            <li><a href="Reviews.html"><i class="fa-regular fa-heart" style="color: #ffffff;"></i></li></a>
+            <li><a href="sign up.html"><i class="fa-regular fa-user" style="color: #fff8f8;"></i></li></a>
+        </ul>
+        <div class="hamburger">&#9776;</div>
+    </nav>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        });
+    </script>      
+
+    <section class="tour-list">
+        <div class="container">
+            <h2>Our Popular Tours</h2>
+            <div class="tour-cards">
+                <div class="tour-card">
+                    <img src="https://cdn.cityexplorerliverpool.co.uk/wp-content/uploads/2023/07/city-explorer-liverool-original-open-top-bus-tour.jpg" alt="Tour 1">
+                    <h3>City Tour</h3>
+                    <p>Discover the city's landmarks with an expert guide.</p>
+                    <button class="view-details" data-tour="1">View Details</button>
+                </div>
+                <div class="tour-card">
+                    <img src="https://media.istockphoto.com/id/939160216/photo/tourists-on-safari-game-drive.jpg?s=612x612&w=0&k=20&c=JWjq4KqFlLSmfCcAo8LwgQUt1z8ofuMcHF_pDkqmooc=" alt="Tour 2">
+                    <h3>Nature Safari</h3>
+                    <p>Explore the wild in a thrilling safari adventure.</p>
+                    <button class="view-details" data-tour="2">View Details</button>
+                </div>
+                <div class="tour-card">
+                    <img src="https://t3.ftcdn.net/jpg/08/36/53/52/360_F_836535225_xB4dkC6uTpvwUKlEo6iiVQHj9vQOk7wq.jpg" alt="Tour 3">
+                    <h3>Beach Getaway</h3>
+                    <p>Relax and unwind at the most beautiful beaches.</p>
+                    <button class="view-details" data-tour="3">View Details</button>
+                </div>
+                <div class="tour-card">
+                    <img src="https://www.pureholidayscruises.co.uk/uploads/images/Cruise%20Line/Norwegian%20Cruise%20Line/Getaway/ncl_Gtwy_Ocho_Rios_12_hi.jpg" alt="Tour 4">
+                    <h3>Cruise Getaway</h3>
+                    <p>Relax on board while visiting beautiful ports and enjoying onboard activities.</p>
+                    <button class="view-details" data-tour="4">View Details</button>
+                </div>
+            </div>
+        </div>
+        <p>Want to book ? Visit our <a href="Booking.html">Booking</a>for more information.</p>
+    </section>
+
+    <!-- Modal for tour details -->
+    <div id="tour-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close">&times;</span>
+            <h2>Tour Details</h2>
+            <div id="tour-info">
+                <p>Select a tour to view details.</p>
+            </div>
+        </div>
+    </div>
+
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-logo">
+            <h4>WORLDWIDE TRAVEL</h4>
+        </div>
+
+        <div class="footer-links">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="Sign Up.html">Sign Up</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="#">Reveiws</a></li>
+                <li><a href="#">Help</a></li>
+                
+            </ul>
+        </div>
+        <div class="footer-social">
+            <a href="#">Facebook</a> | <i class="fa-brands fa-facebook" style="color: #000000;"></i> |
+            <a href="#">Instagram</a> | <i class="fa-brands fa-instagram" style="color: #000000;"></i>
+            <a href="#">Twitter</a> |  <i class="fa-brands fa-twitter" style="color: #000000;"></i>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Smooth scroll for anchor links
+    document.querySelectorAll('.footer-links a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>   
+
+
+<style>
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+/* Tour List */
+.tour-list {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.tour-list h2 {
+    font-size: 35px;
+    margin-bottom: 20px;
+    margin-top: 80px;
+    color: #000000;
+}
+
+.tour-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    transform: translateY(-10px); /* Slight hover effect */
+}
+
+.tour-card {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.tour-card img {
+    width: 100%;
+    border-radius: 8px;
+    height: 180px;
+    object-fit: cover;
+}
+
+.tour-card h3 {
+    margin-top: 15px;
+    font-size: 1.5rem;
+    color: darkcyan;
+}
+
+.tour-card p {
+    margin: 10px 0;
+    color: #555;
+}
+
+.view-details {
+    background-color: darkcyan;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.view-details:hover {
+    background-color: rgb(31, 112, 112);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+</style>
+
+
+<script>
+// Get modal elements
+const modal = document.getElementById("tour-modal");
+const closeModal = document.getElementById("close-modal");
+const tourInfo = document.getElementById("tour-info");
+
+// Tour details
+const tourDetails = {
+    1: {
+        title: "City Tour",
+        description: "Explore the city's landmarks, rich history, and culture with an expert guide. Visit famous museums, parks, and iconic buildings."
+    },
+    2: {
+        title: "Nature Safari",
+        description: "Get up close with wildlife on a thrilling safari adventure through protected nature reserves. Perfect for nature lovers!"
+    },
+    3: {
+        title: "Beach Getaway",
+        description: "Relax on pristine beaches, take a boat tour, and indulge in water sports in some of the world’s most beautiful coastal destinations."
+    },
+    4: {
+        title: "Cruise Getaway",
+        description: "Enjoy days on a luxurious cruise with exotic destinations & Relax on board while visiting beautiful ports and enjoying onboard activities."
+    },
+};
+
+// Function to open the modal
+function openModal(tourId) {
+    const details = tourDetails[tourId];
+    if (details) {
+        tourInfo.innerHTML = `
+            <h3>${details.title}</h3>
+            <p>${details.description}</p>
+        `;
+        modal.style.display = "block";
+    }
+}
+
+// Event listener for close button
+closeModal.onclick = function() {
+    modal.style.display = "none";
+}
+
+// Event listener for window click (outside modal)
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+// Event listeners for "View Details" buttons
+const viewButtons = document.querySelectorAll(".view-details");
+viewButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        const tourId = button.getAttribute("data-tour");
+        openModal(tourId);
+    });
+});
+</script>
+
+
+
+    
+</body>
+</html>

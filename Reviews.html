@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reviews</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <nav class="navbar">
+    <div class="logo">
+      <a href="#">WORLDWIDE TRAVELS</a>
+    </div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Destination.html">Destinations</a></li>
+        <li><a href="Packages.html">Packages</a></li>
+        <li><a href="Booking.html">Booking</a></li>
+        <li><a href="Reviews.html"><i class="fa-regular fa-heart" style="color: #ffffff;"></i></li></a>
+        <li><a href="sign up.html"><i class="fa-regular fa-user" style="color: #fff8f8;"></i></li></a>
+    </ul>
+    <div class="hamburger">&#9776;</div>
+</nav>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.querySelector('.hamburger');
+      const navLinks = document.querySelector('.nav-links');
+      
+      hamburger.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+      });
+  });
+</script>
+
+
+  <section class="reviews-section">
+    <div class="container">
+      <h2>Share Your Experience</h2>
+      <p>We'd love to hear about your adventure! Leave us a review below.</p>
+
+      <!-- Review Form -->
+      <form id="reviewForm" class="review-form">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+        <label for="rating">Rating:</label>
+        <div class="star-rating">
+          <span data-value="1" class="star">&#9733;</span>
+          <span data-value="2" class="star">&#9733;</span>
+          <span data-value="3" class="star">&#9733;</span>
+          <span data-value="4" class="star">&#9733;</span>
+          <span data-value="5" class="star">&#9733;</span>
+        </div>
+
+        <label for="review">Your Review:</label>
+        <textarea id="review" name="review" placeholder="Write your review..." rows="5" required></textarea>
+
+        <button type="submit">Submit Review</button>
+      </form>
+
+      <!-- Success Message -->
+      <div id="successMessage" class="success-message">
+        <p>Your review has been submitted!</p>
+      </div>
+
+      <!-- Reviews List -->
+      <div id="reviewsList" class="reviews-list">
+        <!-- Reviews will appear here -->
+      </div>
+    </div>
+  </section>
+
+
+ <!-- Footer Section -->
+ <footer class="footer">
+  <div class="footer-content">
+      <div class="footer-logo">
+          <h4>WORLDWIDE TRAVEL</h4>
+      </div>
+
+      <div class="footer-links">
+          <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="Sign Up.html">Sign Up</a></li>
+              <li><a href="Contact.html">Contact</a></li>
+              <li><a href="#">Reveiws</a></li>
+              <li><a href="#">Help</a></li>
+              
+          </ul>
+      </div>
+      <div class="footer-social">
+          <a href="#">Facebook</a> | <i class="fa-brands fa-facebook" style="color: #000000;"></i> |
+          <a href="#">Instagram</a> | <i class="fa-brands fa-instagram" style="color: #000000;"></i>
+          <a href="#">Twitter</a> |  <i class="fa-brands fa-twitter" style="color: #000000;"></i>
+      </div>
+  </div>
+</footer>
+
+<script>
+  // Smooth scroll for anchor links
+  document.querySelectorAll('.footer-links a').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+          
+          if (targetElement) {
+              window.scrollTo({
+                  top: targetElement.offsetTop,
+                  behavior: 'smooth'
+              });
+          }
+      });
+  });
+</script>
+  
+
+  
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.reviews-section {
+  background-color: white;
+  padding: 40px 20px;
+  margin-top: 20px;
+}
+
+.reviews-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.reviews-section p {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.review-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #ecf0f1;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.review-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.review-form input, .review-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #bdc3c7;
+  border-radius: 4px;
+}
+
+.star-rating {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.star {
+  font-size: 2rem;
+  cursor: pointer;
+  color: #bdc3c7;
+}
+
+.star.selected, .star:hover {
+  color: #f39c12;
+}
+
+.review-form button {
+  background-color: darkcyan;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.review-form button:hover {
+  background-color: rgb(50, 134, 134);
+}
+
+.success-message {
+  display: none;
+  background-color: #27ae60;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 4px;
+}
+
+.reviews-list {
+  margin-top: 40px;
+}
+
+.review-card {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.review-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+h2 {
+    padding: 13px;
+    color: #333;
+    font-size: 50px;
+}
+
+.review-card p {
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .review-form {
+    width: 100%;
+  }
+}
+</style>
+
+
+<script>
+// Handle the star rating system
+const stars = document.querySelectorAll('.star');
+let selectedRating = 0;
+
+stars.forEach(star => {
+  star.addEventListener('click', () => {
+    selectedRating = star.getAttribute('data-value');
+    updateStarSelection();
+  });
+});
+
+function updateStarSelection() {
+  stars.forEach(star => {
+    if (star.getAttribute('data-value') <= selectedRating) {
+      star.classList.add('selected');
+    } else {
+      star.classList.remove('selected');
+    }
+  });
+}
+
+// Handle form submission
+document.getElementById('reviewForm').addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  const name = document.getElementById('name').value;
+  const review = document.getElementById('review').value;
+
+  if (selectedRating && name && review) {
+    const reviewList = document.getElementById('reviewsList');
+    const reviewCard = document.createElement('div');
+    reviewCard.classList.add('review-card');
+
+    reviewCard.innerHTML = `
+      <h3>${name} - ${getRatingText(selectedRating)}</h3>
+      <p>${review}</p>
+    `;
+
+    reviewList.appendChild(reviewCard);
+
+    // Show success message
+    const successMessage = document.getElementById('successMessage');
+    successMessage.style.display = 'block';
+    setTimeout(() => {
+      successMessage.style.display = 'none';
+    }, 3000);
+
+    // Reset the form
+    document.getElementById('reviewForm').reset();
+    selectedRating = 0;
+    updateStarSelection();
+  }
+});
+
+function getRatingText(rating) {
+  switch (rating) {
+    case '1': return '1 - Poor';
+    case '2': return '2 - Fair';
+    case '3': return '3 - Good';
+    case '4': return '4 - Very Good';
+    case '5': return '5 - Excellent';
+    default: return '';
+  }
+}
+</script>
+
+
+
+</body>
+</html>
